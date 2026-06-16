@@ -113,11 +113,8 @@ const integrationSections = [
 ];
 
 function Landing() {
-  const [showIllustrativeFraming, setShowIllustrativeFraming] = useState(false);
-
   return (
     <div className="min-h-screen bg-background">
-      <IllustrativeDemoBadge className="top-[4.5rem]" />
       <header className="border-b border-border bg-surface-elevated/80 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-6">
           <div className="flex items-center gap-3">
@@ -157,7 +154,7 @@ function Landing() {
               <div className="mt-8 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
                 {[
                   ["7,700", "Workforce"],
-                  ["$5B", "Annual revenue"],
+                  ["₹40,000 Cr+", "Estimated group turnover · Illustrative"],
                   ["12", "Brands &amp; businesses"],
                   ["34%", "Skills expiry risk"],
                 ].map(([value, label]) => (
@@ -185,13 +182,62 @@ function Landing() {
                   landscape.
                 </div>
                 <div className="mt-4 flex flex-col gap-3">
-                  <Button
-                    onClick={() => setShowIllustrativeFraming((current) => !current)}
-                    className="h-11 justify-between rounded-xl bg-white text-foreground hover:bg-white/90"
-                  >
-                    Illustrative Framing
-                    <span aria-hidden="true">{showIllustrativeFraming ? "-" : "+"}</span>
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button
+                        className="h-11 justify-between rounded-xl bg-white text-foreground hover:bg-white/90 w-full"
+                      >
+                        Illustrative Framing
+                        <span aria-hidden="true">+</span>
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-h-[85vh] max-w-4xl overflow-y-auto border-border bg-surface-elevated p-0">
+                      <div className="p-6 sm:p-8 text-foreground">
+                        <DialogHeader>
+                          <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
+                            Illustrative Framing
+                          </div>
+                          <DialogTitle className="font-display text-2xl">
+                            Built to Start a Conversation
+                          </DialogTitle>
+                          <DialogDescription className="text-sm leading-relaxed text-muted-foreground">
+                            This is an illustrative prototype built using DS Group&apos;s public profile -
+                            brands, business units, workforce structure, and seasonal patterns. No live
+                            systems are connected. Every number is modelled, not measured.
+                            <br /><br />
+                            The purpose: show what an Agentic Workforce Platform looks like when it knows
+                            your business - before we build the real thing together.
+                          </DialogDescription>
+                        </DialogHeader>
+
+                        <div className="mt-6 grid gap-4 md:grid-cols-2">
+                          <div className="rounded-2xl border border-border bg-background p-5">
+                            <div className="text-sm font-semibold text-foreground">What&apos;s Real</div>
+                            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-foreground/85">
+                              {illustrativeRealItems.map((item) => (
+                                <li key={item} className="flex gap-3">
+                                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="rounded-2xl border border-border bg-background p-5">
+                            <div className="text-sm font-semibold text-foreground">What&apos;s Modelled</div>
+                            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-foreground/85">
+                              {illustrativeModelledItems.map((item) => (
+                                <li key={item} className="flex gap-3">
+                                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/45" />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
 
                   <Dialog>
                     <DialogTrigger asChild>
@@ -248,72 +294,6 @@ function Landing() {
           </div>
         </div>
       </section>
-
-      {showIllustrativeFraming && (
-        <section className="border-b border-white/10 bg-[#0d1412]">
-          <div className="mx-auto max-w-7xl px-6 py-8">
-            <div className="rounded-3xl border border-white/10 border-l-4 border-l-amber-300 bg-[#121c19] p-6 shadow-elevated lg:p-8">
-              <div className="max-w-4xl">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-amber-200/80">
-                  Illustrative Framing
-                </div>
-                <h2 className="mt-3 font-display text-3xl font-semibold text-white">
-                  Built to Start a Conversation
-                </h2>
-                <p className="mt-4 max-w-4xl text-sm leading-relaxed text-white/70 lg:text-base">
-                  This is an illustrative prototype built using DS Group&apos;s public profile -
-                  brands, business units, workforce structure, and seasonal patterns. No live
-                  systems are connected. Every number is modelled, not measured.
-                </p>
-                <p className="mt-3 max-w-4xl text-sm leading-relaxed text-white/70 lg:text-base">
-                  The purpose: show what an Agentic Workforce Platform looks like when it knows
-                  your business - before we build the real thing together.
-                </p>
-              </div>
-
-              <div className="mt-8 grid gap-4 md:grid-cols-3">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                  <div className="text-sm font-semibold text-white">What&apos;s Real</div>
-                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white/70">
-                    {illustrativeRealItems.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                  <div className="text-sm font-semibold text-white">What&apos;s Modelled</div>
-                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white/70">
-                    {illustrativeModelledItems.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/45" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                  <div className="text-sm font-semibold text-primary-glow">
-                    What 2 Weeks Unlocks
-                  </div>
-                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white/70">
-                    {illustrativeUnlockItems.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-glow" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       <section id="personas" className="mx-auto max-w-7xl px-6 py-20">
         <div className="flex items-end justify-between">
@@ -429,7 +409,7 @@ function Landing() {
                 ["Pass Pass", "Mouth Freshener - Year-round line"],
                 ["L'Opera", "Premium Patisserie - Delhi+5"],
                 ["Le Marche", "Gourmet Retail - Delhi+3"],
-                ["Manu Maharani", "Luxury Hotel - Rishikesh"],
+                ["Manu Maharani", "Luxury Hotel - Nainital"],
                 ["Namah", "Hotel - Rishikesh - Full occupancy"],
               ].map(([name, description]) => (
                 <div key={name} className="rounded-lg border border-border bg-background p-3">

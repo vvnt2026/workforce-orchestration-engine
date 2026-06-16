@@ -90,11 +90,40 @@ export function BrandCoverageScreen() {
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-4">
         <PremiumKpi label="Active Workforce" value="2,006" delta="↑ +5.1%" sub="Seasonal ramp" tone="up" spark={[1880, 1910, 1940, 1960, 1980, 1995, 2006]} />
-        <PremiumKpi label="Guest Satisfaction" value="4.5/5" delta="↓ North dip" sub="Weekly NPS" tone="warn" spark={[4.6, 4.6, 4.5, 4.5, 4.5, 4.5, 4.5]} />
+        <PremiumKpi
+          label="Guest Satisfaction"
+          value="4.5/5"
+          delta="↓ North dip"
+          sub="Weekly NPS"
+          tone="warn"
+          spark={[4.6, 4.6, 4.5, 4.5, 4.5, 4.5, 4.5]}
+          ai="Weekend occupancy at Manu Maharani has been 90%+ for 4 weeks. High occupancy is driving a 44% increase in guest request backlogs. Housekeeping fatigue index is critical (8/10)."
+        />
         <PremiumKpi label="Staffing Coverage" value="92%" delta="Weekend gaps" sub="3 sites critical" tone="warn" />
-        <PremiumKpi label="Open Roles" value="64" delta="Peak pressure" sub="Chef + service heavy" tone="critical" />
-        <PremiumKpi label="Attrition Risk" value="21%" delta="↑ frontline" sub="Customer-facing" tone="critical" />
-        <PremiumKpi label="Training Compliance" value="88%" delta="32 overdue" sub="FSSAI + safety" tone="warn" />
+        <PremiumKpi
+          label="Open Roles"
+          value="64"
+          delta="Peak pressure"
+          sub="Chef + service heavy"
+          tone="critical"
+          ai="Head Chef position at Nainital has been vacant for 18 days. Food quality scores dropped 8% this week. Revenue loss from weekend dining down ₹1.2L. Rec: contract chef."
+        />
+        <PremiumKpi
+          label="Attrition Risk"
+          value="21%"
+          delta="↑ frontline"
+          sub="Customer-facing"
+          tone="critical"
+          ai="Hospitality turnover rose to 34% this quarter, driven by overtime fatigue at Nainital during peak season. Projected cost of replacement: ₹14.8L. Rec: shift limit."
+        />
+        <PremiumKpi
+          label="Training Compliance"
+          value="88%"
+          delta="32 overdue"
+          sub="FSSAI + safety"
+          tone="warn"
+          ai="F&B staff training is at 62% (target 85%). Compliance audit due in 12 days. Uncompleted hygiene module is the biggest gap. Rec: group session."
+        />
         <PremiumKpi label="AI Workforce Alerts" value="14" delta="Active" sub="Immediate action" tone="critical" />
         <PremiumKpi label="Floating pool" value="42" delta="↑ deployable" sub="Cross-location" tone="up" />
       </div>

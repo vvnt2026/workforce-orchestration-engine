@@ -41,10 +41,17 @@ export function SuccessionScreen() {
       title="Succession Intelligence — DS Group"
       subtitle="27 critical roles · 58% bench coverage · 6 succession gaps flagged"
     >
-      <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4 items-start">
         <PremiumKpi label="Critical Roles Tracked" value="27" sub="Top 3 layers of leadership" />
         <PremiumKpi label="Bench Coverage" value="58%" delta="Target 75%" sub="Ready + Emerging" tone="warn" />
-        <PremiumKpi label="Succession Gaps" value="6" delta="Active gaps" sub="3 BU heads · 3 practice heads" tone="critical" />
+        <PremiumKpi
+          label="Succession Gaps"
+          value="6"
+          delta="Active gaps"
+          sub="3 BU heads · 3 practice heads"
+          tone="critical"
+          ai="2 of the 6 succession gaps are BU Head roles in Mouth Freshener and Spices (highest revenue BUs). Leadership vacuum in FY26 will impact growth. HiPo fast-track recommended."
+        />
         <PremiumKpi label="HiPo Pipeline" value="84" delta="Top 5%" sub="In structured development" tone="up" />
       </section>
 

@@ -235,9 +235,23 @@ export function AttritionRetentionScreen() {
       copilotPrompts={COPILOT}
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
-        <PremiumKpi label="Sales Attrition" value="26.4%" delta="↑ +8pp vs co. avg" sub="327 exits / 12M" tone="critical" spark={[22, 23, 24, 25.2, 26, 26.3, 26.4]} />
+        <PremiumKpi
+          label="Sales Attrition"
+          value="26.4%"
+          delta="↑ +8pp vs co. avg"
+          sub="327 exits / 12M"
+          tone="critical"
+          spark={[22, 23, 24, 25.2, 26, 26.3, 26.4]}
+          ai="North zone attrition is running 8pp above company average — ITC and Dabur are actively hiring from your RSO pool in Meerut and Agra. Top 15 flight-risk profiles identified."
+        />
         <PremiumKpi label="High-Risk Reps" value="118" delta="Immediate" tone="critical" />
-        <PremiumKpi label="Avg Tenure at Exit" value="1.9 yrs" delta="↓" tone="down" />
+        <PremiumKpi
+          label="Avg Tenure at Exit"
+          value="1.9 yrs"
+          delta="↓"
+          tone="down"
+          ai="RSOs who cross 18 months show 3.2× lower exit probability. Current avg tenure at exit: 11 months — 7 months below the retention inflection point. Onboarding quality is the lever."
+        />
         <PremiumKpi label="Competitor Poaching" value="High" delta="ITC + HUL" tone="critical" />
         <PremiumKpi label="Revenue at Risk" value="₹24 Cr" delta="12M" tone="critical" />
       </div>
@@ -384,7 +398,14 @@ export function CompensationScreen() {
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <PremiumKpi label="Comp vs P50" value="-12%" delta="Underpaid" tone="down" />
-        <PremiumKpi label="Incentive Fairness" value="68" delta="↓" sub="Fairness index" tone="warn" />
+        <PremiumKpi
+          label="Incentive Fairness"
+          value="68"
+          delta="↓"
+          sub="Fairness index"
+          tone="warn"
+          ai="34% of RSOs missed incentive target 2+ months running — the strongest single predictor of exit within 60 days in this cohort. Recommended: manager 1:1 this week."
+        />
         <PremiumKpi label="Variable Payout" value="₹6.2 Cr" delta="QTD" tone="up" />
         <PremiumKpi label="Comp Risk" value="142" delta="Reps" sub="Underpaid high-performers" tone="critical" />
       </div>
@@ -561,7 +582,13 @@ export function TerritoryCoverageScreen() {
         <PremiumKpi label="Outlet Coverage" value="89%" delta="East 84%" tone="warn" />
         <PremiumKpi label="Rep Utilisation" value="91%" delta="On target" tone="up" />
         <PremiumKpi label="Vacancy Impact" value="₹4.2 Cr" delta="Quarterly" tone="critical" />
-        <PremiumKpi label="Coverage Gaps" value="38" sub="Districts under-served" tone="warn" />
+        <PremiumKpi
+          label="Coverage Gaps"
+          value="38"
+          sub="Districts under-served"
+          tone="warn"
+          ai="3 territories in Meerut have been vacant 18+ days. Revenue leakage estimated at ₹1.8L/week based on average territory throughput. Temp coverage recommended."
+        />
       </div>
 
       <AiInsightBanner

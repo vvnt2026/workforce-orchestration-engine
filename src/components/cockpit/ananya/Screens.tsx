@@ -98,9 +98,24 @@ export function CareerPathScreen() {
       copilotPrompts={COPILOT}
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-4">
-        <PremiumKpi label="Career Readiness" value="74%" delta="↑ +8% / 6M" sub="On accelerated track" tone="up" spark={[58, 62, 65, 68, 70, 72, 74]} ai="Above peer cohort by 12pp" />
+        <PremiumKpi
+          label="Career Readiness"
+          value="74%"
+          delta="↑ +8% / 6M"
+          sub="On accelerated track"
+          tone="up"
+          spark={[58, 62, 65, 68, 70, 72, 74]}
+          ai="You are 71% ready for Brand Manager. Two gaps remain: cross-category campaign ownership and P&L exposure. One internal project this quarter could close both."
+        />
         <PremiumKpi label="Promotion Potential" value="High" delta="Leadership pipeline" sub="Eligible for HiPo cohort" tone="up" />
-        <PremiumKpi label="Internal Matches" value="6" delta="2 high-fit" sub="Refreshed today" tone="up" />
+        <PremiumKpi
+          label="Internal Matches"
+          value="6"
+          delta="2 high-fit"
+          sub="Refreshed today"
+          tone="up"
+          ai="1 internal role matches your profile exactly — Associate Brand Manager, Pulse & Confectionery, Noida HQ. Application window closes in 8 days. Subrat's team has flagged you as a HiPo candidate."
+        />
         <PremiumKpi label="Learning Progress" value="68%" delta="↑ ahead of peers" sub="3 active pathways" tone="up" spark={[42, 48, 54, 58, 62, 65, 68]} />
         <PremiumKpi label="Leadership Potential" value="Top 12%" delta="Future leader cohort" sub="9-box: top-right" tone="up" />
         <PremiumKpi label="Manager Feedback" value="4.4/5" delta="↑ collaboration" sub="Last 4 reviews avg" tone="up" />
@@ -394,10 +409,18 @@ export function MyLearningScreen() {
       copilotPrompts={COPILOT}
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        <PremiumKpi label="Active Pathways" value="3" sub="Leadership + analytics" tone="up" />
-        <PremiumKpi label="Completion" value="68%" delta="↑ ahead of peers" sub="vs cohort 54%" tone="up" spark={[42, 48, 54, 58, 62, 65, 68]} />
-        <PremiumKpi label="Certifications" value="4" delta="+1 this Q" sub="2 in progress" tone="up" />
-        <PremiumKpi label="Skill Lift" value="+22%" delta="Last 6M" sub="Composite score" tone="up" />
+          <PremiumKpi label="Active Pathways" value="3" sub="Leadership + analytics" tone="up" />
+          <PremiumKpi
+            label="Completion"
+            value="68%"
+            delta="↑ ahead of peers"
+            sub="vs cohort 54%"
+            tone="up"
+            spark={[42, 48, 54, 58, 62, 65, 68]}
+            ai="2 modules pending this month — Digital Analytics and Consumer Insights. Completing both adds 12 points to your Brand Manager readiness score and unlocks the fast-track review track."
+          />
+          <PremiumKpi label="Certifications" value="4" delta="+1 this Q" sub="2 in progress" tone="up" />
+          <PremiumKpi label="Skill Lift" value="+22%" delta="Last 6M" sub="Composite score" tone="up" />
       </div>
 
       <Panel title="AI detects" sub="Active learning intelligence">
@@ -524,7 +547,14 @@ export function MyOpportunitiesScreen() {
       copilotPrompts={COPILOT}
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        <PremiumKpi label="Active Matches" value="6" delta="↑ +2 today" sub="AI-refreshed daily" tone="up" />
+        <PremiumKpi
+          label="Active Matches"
+          value="6"
+          delta="↑ +2 today"
+          sub="AI-refreshed daily"
+          tone="up"
+          ai="1 internal role matches your profile exactly — Associate Brand Manager, Pulse & Confectionery, Noida HQ. Application window closes in 8 days. Subrat's team has flagged you as a HiPo candidate."
+        />
         <PremiumKpi label="High-Fit Roles" value="2" delta=">85% match" sub="Action recommended" tone="up" />
         <PremiumKpi label="Stretch Projects" value="3" sub="2 cross-BU" tone="up" />
         <PremiumKpi label="Programmes" value="2" sub="Leadership Accel + Tx" tone="up" />

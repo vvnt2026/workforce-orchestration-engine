@@ -19,7 +19,7 @@ export function WorkforceIntelligenceScreen() {
       subtitle="Enterprise workforce visibility across FMCG, Manufacturing, Hospitality, and Sales operations."
     >
       {/* KPI row */}
-      <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 items-start">
         <PremiumKpi
           label="Total Workforce"
           value="18,742"
@@ -52,7 +52,15 @@ export function WorkforceIntelligenceScreen() {
         <PremiumKpi label="Women Workforce Ratio" value="21%" delta="↑ +2.4% improvement" sub="Target 28% by 2027" tone="up" spark={[18.2, 18.9, 19.4, 19.8, 20.2, 20.7, 21]} />
         <PremiumKpi label="Workforce Cost YoY" value="↑ 11.8%" delta="Pressure detected" sub="Comp + OT + Contractor" tone="warn" spark={[8.1, 8.9, 9.4, 10.1, 10.8, 11.4, 11.8]} ai="Manufacturing OT +17% — investigate." />
         <PremiumKpi label="AI Risk Alerts" value="38" delta="Priority review" sub="12 critical · 26 warn" tone="critical" spark={[22, 26, 28, 30, 32, 35, 38]} />
-        <PremiumKpi label="Engagement Index" value="71" delta="↓ −4pp" sub="3 sites below threshold" tone="down" spark={[76, 75, 74, 73, 72, 71, 71]} />
+        <PremiumKpi
+          label="Engagement Index"
+          value="71"
+          delta="↓ −4pp"
+          sub="3 sites below threshold"
+          tone="down"
+          spark={[76, 75, 74, 73, 72, 71, 71]}
+          ai="4pp drop is driven entirely by Manufacturing (stable in other BUs). Morale decline at Noida Plant 2 (Shift B fatigue & heat complaints) is the root cause. Target coaching."
+        />
       </section>
 
       <AiInsightBanner

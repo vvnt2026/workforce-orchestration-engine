@@ -26,7 +26,7 @@ export function CockpitLayout({
             <div className="hidden flex-col leading-tight md:flex">
               <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">DS Group</span>
               <span className="font-display text-sm font-semibold">
-                {useSections ? "DSG Workforce Orchestration Engine" : "Agentic Workforce Platform"}
+                DS Group · Agentic Workforce Platform
               </span>
             </div>
           </Link>

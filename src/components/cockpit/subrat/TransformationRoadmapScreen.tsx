@@ -41,7 +41,7 @@ export function TransformationRoadmapScreen() {
       title="Transformation Roadmap"
       subtitle="People + Process AI transformation · 4 phases · 11 strategic initiatives"
     >
-      <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4 items-start">
         <PremiumKpi label="Transformation Index" value="42%" delta="Target 65%" sub="People + Process combined" tone="warn" spark={[28, 30, 33, 36, 38, 40, 42]} />
         <PremiumKpi label="AI Adoption" value="38%" delta="↑ +14pp" sub="HRBPs + line managers" tone="up" spark={[12, 18, 22, 26, 30, 34, 38]} />
         <PremiumKpi label="Process Automation" value="48 workflows" delta="↑ +12 QoQ" sub="HR + workforce ops" tone="up" spark={[12, 18, 24, 30, 36, 42, 48]} />

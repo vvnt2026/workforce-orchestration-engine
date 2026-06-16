@@ -73,12 +73,40 @@ export const personas: Record<string, Persona> = {
     kpis: [
       { label: "Total Workforce", value: "7,700", signal: "+340 YTD", sub: "Noida HQ + 12 locations", tone: "up" },
       { label: "Skills Expiry Risk", value: "34%", signal: "↑ +8pp", sub: "Critical skills · 18-month window", tone: "critical" },
-      { label: "Attrition (12M)", value: "18.4%", signal: "↑ +2.1pp", sub: "Sales force = 43% of exits", tone: "warn" },
-      { label: "Open Critical Roles", value: "87", signal: "Avg 41 days", sub: "Brand · Supply Chain · Digital", tone: "warn" },
+      {
+        label: "Attrition (12M)",
+        value: "18.4%",
+        signal: "↑ +2.1pp",
+        sub: "Sales force = 43% of exits",
+        tone: "warn",
+        ai: "Sales force represents 43% of total exits despite being 16% of head count. North India RSO attrition (26.4%) is the primary driver. Meerut, Agra, Lucknow account for 62% of risk."
+      },
+      {
+        label: "Open Critical Roles",
+        value: "87",
+        signal: "Avg 41 days",
+        sub: "Brand · Supply Chain · Digital",
+        tone: "warn",
+        ai: "Brand & R&D positions are taking 41 days to fill vs industry average of 28 days. Employer brand strength in digital/marketing ranks below HUL/ITC. LinkedIn talent push needed."
+      },
       { label: "Transformation Index", value: "42%", signal: "Target 65%", sub: "People + Process combined", tone: "warn" },
-      { label: "Engagement Score", value: "71", signal: "↓ -4pp", sub: "Manufacturing below threshold", tone: "down" },
+      {
+        label: "Engagement Score",
+        value: "71",
+        signal: "↓ -4pp",
+        sub: "Manufacturing below threshold",
+        tone: "down",
+        ai: "4pp drop is driven entirely by Manufacturing (stable in other BUs). Morale decline at Noida Plant 2 (Shift B fatigue & heat complaints) is the root cause. Target coaching."
+      },
       { label: "Digital Talent Ratio", value: "8.2%", signal: "Target 15%", sub: "By 2027", tone: "up" },
-      { label: "Succession Coverage", value: "58%", signal: "6 gaps", sub: "Critical leadership roles", tone: "warn" },
+      {
+        label: "Succession Coverage",
+        value: "58%",
+        signal: "6 gaps",
+        sub: "Critical leadership roles",
+        tone: "warn",
+        ai: "2 of the 6 succession gaps are BU Head roles in Mouth Freshener and Spices (highest revenue BUs). Leadership vacuum in FY26 will impact growth. HiPo fast-track recommended."
+      },
     ],
     insight: {
       title: "Skills Obsolescence — Manufacturing & Sales",
@@ -95,7 +123,7 @@ export const personas: Record<string, Persona> = {
       sources: "skills graph · market benchmarks · learning completion · attrition patterns · role taxonomy",
       stats: [
         { label: "Employees at risk", value: "2,618" },
-        { label: "Revenue impact", value: "₹84 Cr" },
+        { label: "Revenue impact", value: "₹84 Cr (illustrative · based on revenue-per-employee model)" },
         { label: "Transformation gap", value: "23 months" },
         { label: "AI-accelerated", value: "6 months" },
       ],
@@ -143,12 +171,40 @@ export const personas: Record<string, Persona> = {
     kpis: [
       { label: "Plant Workforce", value: "1,240", sub: "Permanent + Contract · Noida + 2 satellite" },
       { label: "Today's Attendance", value: "89.2%", signal: "↓ -3.1pp", sub: "Shift B below threshold", tone: "down" },
-      { label: "Active Grievances", value: "9", signal: "↑ +3 new", sub: "Packaging line dominant", tone: "warn" },
+      {
+        label: "Active Grievances",
+        value: "9",
+        signal: "↑ +3 new",
+        sub: "Packaging line dominant",
+        tone: "warn",
+        ai: "Active grievances at Noida Plant rose to 6 this week, primarily related to summer overtime shifts. Average resolution time: 4.8 days. Recommended: union check-in."
+      },
       { label: "Compliance Alerts", value: "5", signal: "Urgent", sub: "ESIC + contract renewals", tone: "critical" },
       { label: "Attrition Risk", value: "18", signal: "workers", sub: "Packaging + QA lines", tone: "warn" },
-      { label: "Seasonal Hiring Gap", value: "34", signal: "Urgent", sub: "Pulse season peak", tone: "critical" },
-      { label: "Skill Expiry Risk", value: "127", signal: "18 months", sub: "Automation disruption", tone: "critical" },
-      { label: "Contract Renewals", value: "12", signal: "30 days", sub: "Action needed", tone: "warn" },
+      {
+        label: "Seasonal Hiring Gap",
+        value: "34",
+        signal: "Urgent",
+        sub: "Pulse season peak",
+        tone: "critical",
+        ai: "Seasonal demand spike in Mouth Freshener production requires +40 operators by next Monday. Current hiring pipeline is short 14 candidates. Overtime cost forecast: +₹2.4L."
+      },
+      {
+        label: "Skill Expiry Risk",
+        value: "127",
+        signal: "18 months",
+        sub: "Automation disruption",
+        tone: "critical",
+        ai: "22 operators have electrical safety certifications expiring within 15 days. Non-compliance could stop Packaging Line 3. Recommended: schedule refresher training."
+      },
+      {
+        label: "Contract Renewals",
+        value: "12",
+        signal: "30 days",
+        sub: "Action needed",
+        tone: "warn",
+        ai: "14 operator contracts expire on June 30. Replacing them in the open market will cost ₹2.1L. Recommended: start automated renewal workflows for top 10 performance scores."
+      },
     ],
     insight: {
       title: "Shift B Attendance + Burnout Cluster",
@@ -215,11 +271,11 @@ export const personas: Record<string, Persona> = {
     tasks: 13,
     accent: "green",
     greeting:
-      "Good morning, Vikram. Field sales attrition in North India is running at 26.4% — 8pp above company average. 47 RSOs have received competitor offers this quarter (flagged via exit interviews, mid-quarter pulse, and manager disclosures). AI has identified the top 15 at immediate flight risk.",
+      "Good morning, Vikram. Field sales attrition in North India is running at 26.4% — 8pp above company average. 47 RSOs flagged as high flight-risk this quarter — based on tenure under 18 months, 2+ missed incentive targets, territory reassignment in last 90 days, and below-median pulse score. AI has identified the top 15 at immediate flight risk.",
     kpis: [
       { label: "Field Sales Team", value: "1,240", sub: "RSO + ASM + TSM · North India" },
       { label: "Attrition (12M)", value: "26.4%", signal: "↑ +8pp vs co. avg", sub: "327 exits · ₹18.4 Cr cost", tone: "critical" },
-      { label: "Competitor Offers", value: "47", signal: "↑ Quarter", sub: "ITC + HUL + Dabur poaching", tone: "critical" },
+      { label: "High Flight-Risk", value: "47", signal: "↑ Quarter", sub: "Poaching risk factors", tone: "critical" },
       { label: "At Flight Risk", value: "15", signal: "Immediate", sub: "Comp + career signals", tone: "critical" },
       { label: "Avg Time to Fill", value: "34d", signal: "↑", sub: "Territory coverage gap", tone: "warn" },
       { label: "Training Completion", value: "61%", signal: "↓", sub: "Digital tools adoption low", tone: "down" },
@@ -291,12 +347,40 @@ export const personas: Record<string, Persona> = {
     greeting:
       "Good morning, Ananya. Your Catch Spices Q2 campaign performance is top 20% among brand executives. AI has identified a gap-closing plan for your Brand Manager readiness — and found an internal opportunity that matches your profile exactly.",
     kpis: [
-      { label: "Campaign performance", value: "Top 20%", signal: "↑", sub: "Catch Spices Q2 · peer rank", tone: "up" },
-      { label: "Brand Manager readiness", value: "58%", signal: "↑ +12pp", sub: "Target 80% for promotion", tone: "up" },
+      {
+        label: "Campaign performance",
+        value: "Top 20%",
+        signal: "↑",
+        sub: "Catch Spices Q2 · peer rank",
+        tone: "up",
+        ai: "Your Q2 Catch Spices campaign ranked top 20% among brand executives in DS Group. Peer benchmark: MNC FMCG brand managers at equivalent tenure average 68% target achievement. You are at 74%."
+      },
+      {
+        label: "Brand Manager readiness",
+        value: "58%",
+        signal: "↑ +12pp",
+        sub: "Target 80% for promotion",
+        tone: "up",
+        ai: "You are 71% ready for Brand Manager. Two gaps remain: cross-category campaign ownership and P&L exposure. One internal project this quarter could close both."
+      },
       { label: "Comp vs FMCG market", value: "-14%", signal: "Gap", sub: "vs MNC FMCG Brand Exec P50", tone: "down" },
-      { label: "Learning progress", value: "64%", signal: "↑", sub: "Digital marketing · FMCG cert", tone: "up" },
+      {
+        label: "Learning progress",
+        value: "64%",
+        signal: "↑",
+        sub: "Digital marketing · FMCG cert",
+        tone: "up",
+        ai: "2 modules pending this month — Digital Analytics and Consumer Insights. Completing both adds 12 points to your Brand Manager readiness score and unlocks the fast-track review track."
+      },
       { label: "Next review", value: "47d", signal: "Upcoming", sub: "Mid-year July cycle" },
-      { label: "Internal opportunity", value: "1", signal: "New match", sub: "Found overnight by AI", tone: "up" },
+      {
+        label: "Internal opportunity",
+        value: "1",
+        signal: "New match",
+        sub: "Found overnight by AI",
+        tone: "up",
+        ai: "1 internal role matches your profile exactly — Associate Brand Manager, Pulse & Confectionery, Noida HQ. Application window closes in 8 days. Subrat's team has flagged you as a HiPo candidate."
+      },
       { label: "Mentor sessions", value: "3/6", signal: "↑", sub: "CMO mentoring programme", tone: "up" },
       { label: "Cross-functional projects", value: "2", signal: "Active", sub: "Digital + Trade marketing" },
     ],
@@ -363,11 +447,39 @@ export const personas: Record<string, Persona> = {
       "Good morning, Kavita. Weekend occupancy at Manu Maharani hit 94% — but 3 F&B team members called in sick creating a coverage gap. L'Opera Delhi has 2 chef positions unfilled for 28 days. AI has prepared your Monday operating picture.",
     kpis: [
       { label: "Hospitality Workforce", value: "847", sub: "7 locations · Hotels + Patisserie + Retail" },
-      { label: "Weekend Coverage", value: "91%", signal: "↓ -3 sick", sub: "Manu Maharani F&B gap today", tone: "down" },
-      { label: "Attrition (12M)", value: "34%", signal: "Industry norm", sub: "Chef + service roles high", tone: "warn" },
-      { label: "Open Critical Roles", value: "12", signal: "↑", sub: "Chef × 2 · Sommelier · Mgr × 2", tone: "critical" },
+      {
+        label: "Weekend Coverage",
+        value: "91%",
+        signal: "↓ -3 sick",
+        sub: "Manu Maharani F&B gap today",
+        tone: "down",
+        ai: "Weekend occupancy at Manu Maharani has been 90%+ for 4 weeks. High occupancy is driving a 44% increase in guest request backlogs. Housekeeping fatigue index is critical (8/10)."
+      },
+      {
+        label: "Attrition (12M)",
+        value: "34%",
+        signal: "Industry norm",
+        sub: "Chef + service roles high",
+        tone: "warn",
+        ai: "Hospitality turnover rose to 34% this quarter, driven by overtime fatigue at Nainital during peak season. Projected cost of replacement: ₹14.8L. Rec: shift limit."
+      },
+      {
+        label: "Open Critical Roles",
+        value: "12",
+        signal: "↑",
+        sub: "Chef × 2 · Sommelier · Mgr × 2",
+        tone: "critical",
+        ai: "Head Chef position at Nainital has been vacant for 18 days. Food quality scores dropped 8% this week. Revenue loss from weekend dining down ₹1.2L. Rec: contract chef."
+      },
       { label: "Guest Satisfaction", value: "4.6/5", signal: "↑", sub: "Manu Maharani YTD", tone: "up" },
-      { label: "Training Compliance", value: "74%", signal: "↓", sub: "FSSAI + Safety annual", tone: "down" },
+      {
+        label: "Training Compliance",
+        value: "74%",
+        signal: "↓",
+        sub: "FSSAI + Safety annual",
+        tone: "down",
+        ai: "F&B staff training is at 62% (target 85%). Compliance audit due in 12 days. Uncompleted hygiene module is the biggest gap. Rec: group session."
+      },
       { label: "Avg Time to Fill Chef", value: "38d", signal: "↑", sub: "Hospitality market tight", tone: "warn" },
       { label: "Seasonal Readiness", value: "61%", signal: "↓", sub: "Peak season Jun–Aug", tone: "warn" },
     ],
@@ -440,11 +552,35 @@ export const personas: Record<string, Persona> = {
       "Namaste Arjun. Aaj 6 stores visit karne hain. Sharma Kirana sabse badi opportunity hai — ₹2,400 potential. 7 orders this month, 15 ka target. Chal shuru karte hain. 🎯",
     kpis: [
       { label: "Aaj ka store target", value: "6", sub: "2 visited · 4 remaining", tone: "warn" },
-      { label: "Is mahine ke orders", value: "7", sub: "of 15 target", tone: "warn" },
-      { label: "Meri kamai", value: "₹4,800", sub: "projected this month", tone: "up" },
+      {
+        label: "Is mahine ke orders",
+        value: "7",
+        sub: "of 15 target",
+        tone: "warn",
+        ai: "Tere batch mein jo RSOs mahine ke pehle 18 din mein 8+ orders karte hain, unka monthly average 23% zyada hota hai. Aaj Sharma Kirana visit karo — ek order aur aur tu safe zone mein hai."
+      },
+      {
+        label: "Meri kamai",
+        value: "₹4,800",
+        sub: "projected this month",
+        tone: "up",
+        ai: "15 orders karne par ₹9,200 milega — aaj ke baad sirf 8 aur chahiye. Sharma Kirana + Gupta Provision Store dono visit karo aaj — dono milake ₹4,800 potential hai."
+      },
       { label: "Probation countdown", value: "72", sub: "days remaining", tone: "up" },
-      { label: "Learning progress", value: "4/6", sub: "2 modules pending", tone: "warn" },
-      { label: "Batch ranking", value: "12/38", sub: "top third of batch", tone: "up" },
+      {
+        label: "Learning progress",
+        value: "4/6",
+        sub: "2 modules pending",
+        tone: "warn",
+        ai: "Jo RSOs pehle 21 din mein saare modules complete karte hain, unka probation pass rate 34% zyada hota hai. Tere paas 3 din hain — aaj raat 1 module kar lo."
+      },
+      {
+        label: "Batch ranking",
+        value: "12/38",
+        sub: "top third of batch",
+        tone: "up",
+        ai: "Top 10 mein aane ke liye tujhe sirf 2 aur orders chahiye is mahine. Top 10 RSOs ko DS Group ka Fast Track program milta hai — 6 mahine mein Senior RSO promotion possible hai."
+      },
       { label: "Buddy connect", value: "4 days", sub: "since last contact", tone: "critical" },
       { label: "Badges earned", value: "2", sub: "First 5 Orders unlocked", tone: "up" },
     ],

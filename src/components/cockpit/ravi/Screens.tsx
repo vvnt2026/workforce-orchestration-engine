@@ -115,10 +115,24 @@ export function WorkforceScreen() {
         <PremiumKpi label="Contract Workforce" value="221" delta="High dep." sub="45% of total · packaging-led" tone="warn" spark={[180, 190, 200, 205, 212, 218, 221]} ai="Dependency concentration risk" />
         <PremiumKpi label="Attendance Today" value="91.4%" delta="↓ -3.1pp" sub="Shift B below threshold" tone="down" spark={[95, 94, 93, 92, 91, 90, 91]} ai="Decline correlates with OT spike" />
         <PremiumKpi label="Overtime Hours" value="1,842" delta="Threshold approaching" sub="MTD · cap 2,000" tone="critical" spark={[1200, 1320, 1480, 1610, 1720, 1800, 1842]} ai="Will breach in 6 days at current pace" />
-        <PremiumKpi label="Active Grievances" value="7" delta="2 escalated" sub="Packaging Zone 2 cluster" tone="warn" ai="Supervisor pattern detected" />
+        <PremiumKpi
+          label="Active Grievances"
+          value="7"
+          delta="2 escalated"
+          sub="Packaging Zone 2 cluster"
+          tone="warn"
+          ai="Active grievances at Noida Plant rose to 6 this week, primarily related to summer overtime shifts. Average resolution time: 4.8 days. Recommended: union check-in."
+        />
         <PremiumKpi label="Safety Incidents" value="3" delta="↓ improving" sub="All minor · MTD" tone="up" spark={[7, 6, 5, 4, 3, 3, 3]} />
         <PremiumKpi label="Shift Fatigue Risk" value="18" delta="High risk" sub="Workers flagged this week" tone="critical" ai="14 from Shift B" />
-        <PremiumKpi label="Open Reqs" value="34" delta="Pulse season" sub="Lead time 21 days" tone="warn" />
+        <PremiumKpi
+          label="Open Reqs"
+          value="34"
+          delta="Pulse season"
+          sub="Lead time 21 days"
+          tone="warn"
+          ai="Seasonal demand spike in Mouth Freshener production requires +40 operators by next Monday. Current hiring pipeline is short 14 candidates. Overtime cost forecast: +₹2.4L."
+        />
       </div>
 
       <AiInsightBanner
@@ -285,7 +299,14 @@ export function ComplianceScreen() {
         <PremiumKpi label="ESIC Compliance" value="96%" tone="up" sub="1,191 / 1,240" />
         <PremiumKpi label="PF Reconciliation" value="18" delta="Pending" sub="Workers" tone="warn" />
         <PremiumKpi label="Labour Licence" value="2" delta="Renewal" sub="Due 30 days" tone="warn" />
-        <PremiumKpi label="Safety Training" value="37" delta="Overdue" sub="Mandatory · Q2" tone="critical" />
+        <PremiumKpi
+          label="Safety Training"
+          value="37"
+          delta="Overdue"
+          sub="Mandatory · Q2"
+          tone="critical"
+          ai="22 operators have electrical safety certifications expiring within 15 days. Non-compliance could stop Packaging Line 3. Recommended: schedule refresher training."
+        />
         <PremiumKpi label="Audit Risks" value="4" delta="Open" sub="Q3 cycle" tone="warn" />
       </div>
 
@@ -427,7 +448,13 @@ export function GrievanceScreen() {
       copilotPrompts={COPILOT}
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
-        <PremiumKpi label="Active Grievances" value="7" tone="warn" sub="+3 this week" />
+        <PremiumKpi
+          label="Active Grievances"
+          value="7"
+          tone="warn"
+          sub="+3 this week"
+          ai="Active grievances at Noida Plant rose to 6 this week, primarily related to summer overtime shifts. Average resolution time: 4.8 days. Recommended: union check-in."
+        />
         <PremiumKpi label="Escalated" value="2" tone="critical" sub="Plant Head queue" />
         <PremiumKpi label="Anonymous" value="3" tone="warn" sub="Safety + cafeteria" />
         <PremiumKpi label="Avg Sentiment" value="-0.18" tone="down" sub="Shift B trending down" />
@@ -522,7 +549,14 @@ export function ShiftManagementScreen() {
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <PremiumKpi label="Shifts running" value="3" sub="A · B · C" />
-        <PremiumKpi label="Staffing Gap" value="14" delta="Today" sub="Shift B + Packaging" tone="warn" />
+        <PremiumKpi
+          label="Staffing Gap"
+          value="14"
+          delta="Today"
+          sub="Shift B + Packaging"
+          tone="warn"
+          ai="Seasonal demand spike in Mouth Freshener production requires +40 operators by next Monday. Current hiring pipeline is short 14 candidates. Overtime cost forecast: +₹2.4L."
+        />
         <PremiumKpi label="OT Allocation" value="1,842h" delta="MTD" tone="critical" />
         <PremiumKpi label="Backup Pool" value="38" sub="On-call contract" tone="up" />
       </div>
@@ -590,7 +624,13 @@ export function TrainingScreen() {
       copilotPrompts={COPILOT}
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        <PremiumKpi label="Safety Training" value="84%" sub="161 / 192 workers" tone="up" />
+        <PremiumKpi
+          label="Safety Training"
+          value="84%"
+          sub="161 / 192 workers"
+          tone="up"
+          ai="22 operators have electrical safety certifications expiring within 15 days. Non-compliance could stop Packaging Line 3. Recommended: schedule refresher training."
+        />
         <PremiumKpi label="Equipment Cert." value="71%" sub="Forklift + line ops" tone="warn" />
         <PremiumKpi label="Compliance Learning" value="92%" sub="Mandatory POSH + ethics" tone="up" />
         <PremiumKpi label="Supervisor Dev." value="48%" sub="12 supervisors" tone="down" />
@@ -720,7 +760,14 @@ export function PlantAttritionScreen() {
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-4">
         <PremiumKpi label="Plant Attrition" value="24%" delta="↑ +2pp" sub="12M trailing" tone="warn" spark={[20, 21, 21, 22, 23, 24, 24]} />
-        <PremiumKpi label="Contract Exits" value="41%" delta="High" sub="Packaging-led" tone="critical" />
+        <PremiumKpi
+          label="Contract Exits"
+          value="41%"
+          delta="High"
+          sub="Packaging-led"
+          tone="critical"
+          ai="14 operator contracts expire on June 30. Replacing them in the open market will cost ₹2.1L. Recommended: start automated renewal workflows for top 10 performance scores."
+        />
         <PremiumKpi label="Avg Tenure at Exit" value="1.8 yrs" delta="↓" sub="Industry 2.4 yrs" tone="down" />
         <PremiumKpi label="Replacement Cost" value="₹3.6L" delta="/ worker" sub="Hire + train + ramp" tone="warn" />
       </div>

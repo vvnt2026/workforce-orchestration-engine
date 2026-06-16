@@ -363,7 +363,7 @@ function TargetScreen({
   return (
     <div className="space-y-5">
       <Card>
-        <h2 className="font-display text-lg font-semibold text-slate-900">Tera Din — Thursday, 5 June 2025</h2>
+        <h2 className="font-display text-lg font-semibold text-slate-900">Tera Din — Tuesday, 16 June 2026</h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-700">
           Tere batch mein jo RSOs Day 20 tak 8+ orders kar lete hain, unke probation clear karne ke chances 78% zyada
           hote hain. Abhi tere paas 7 orders hain — aaj 1 aur chahiye. Sharma Kirana Cantonment aur Gupta Provision
@@ -404,13 +404,29 @@ function KpiGrid({ buddyNudgeActivated }: { buddyNudgeActivated: boolean }) {
         <div className="mt-1 text-[10px] text-slate-500">2 of 6 visited so far today</div>
       </KpiTile>
 
-      <KpiTile title="IS MAHINE KE ORDERS" value="7" valueColor={AMBER} sub="of 15 target" tag="⚠ 8 more needed · 17 days left" tagTone="amber">
+      <KpiTile
+        title="IS MAHINE KE ORDERS"
+        value="7"
+        valueColor={AMBER}
+        sub="of 15 target"
+        tag="⚠ 8 more needed · 17 days left"
+        tagTone="amber"
+        ai="Tere batch mein jo RSOs mahine ke pehle 18 din mein 8+ orders karte hain, unka monthly average 23% zyada hota hai. Aaj Sharma Kirana visit karo — ek order aur aur tu safe zone mein hai."
+      >
         <div className="mt-2 h-1.5 rounded bg-slate-100">
           <div className="h-full rounded bg-amber-500" style={{ width: "47%" }} />
         </div>
       </KpiTile>
 
-      <KpiTile title="MERI KAMAI" value="₹4,800" valueColor={AMBER} sub="projected this month at current pace" tag="Slab 1 of 3" tagTone="grey">
+      <KpiTile
+        title="MERI KAMAI"
+        value="₹4,800"
+        valueColor={AMBER}
+        sub="projected this month at current pace"
+        tag="Slab 1 of 3"
+        tagTone="grey"
+        ai="15 orders karne par ₹9,200 milega — aaj ke baad sirf 8 aur chahiye. Sharma Kirana + Gupta Provision Store dono visit karo aaj — dono milake ₹4,800 potential hai."
+      >
         <div className="mt-1 text-xs text-slate-600">Hit 15 orders → ₹9,200</div>
         <button className="mt-1 text-[11px] font-medium text-amber-700 hover:underline">Earnings calculator →</button>
       </KpiTile>
@@ -427,14 +443,30 @@ function KpiGrid({ buddyNudgeActivated }: { buddyNudgeActivated: boolean }) {
         </div>
       </KpiTile>
 
-      <KpiTile title="LEARNING PROGRESS" value="4 / 6" valueColor={AMBER} sub="modules complete" tag="⚠ 2 modules due this week" tagTone="amber">
+      <KpiTile
+        title="LEARNING PROGRESS"
+        value="4 / 6"
+        valueColor={AMBER}
+        sub="modules complete"
+        tag="⚠ 2 modules due this week"
+        tagTone="amber"
+        ai="Jo RSOs pehle 21 din mein saare modules complete karte hain, unka probation pass rate 34% zyada hota hai. Tere paas 3 din hain — aaj raat 1 module kar lo."
+      >
         <div className="mt-2 h-1.5 rounded bg-slate-100">
           <div className="h-full rounded bg-amber-500" style={{ width: "67%" }} />
         </div>
         <div className="mt-1 text-[10px] text-slate-500">Catch Spices Product Training · Objection Handling</div>
       </KpiTile>
 
-      <KpiTile title="BATCH RANKING" value="12 / 38" valueColor={GREEN} sub="among Day 18 batch in North India" tag="✓ Top third of batch" tagTone="green">
+      <KpiTile
+        title="BATCH RANKING"
+        value="12 / 38"
+        valueColor={GREEN}
+        sub="among Day 18 batch in North India"
+        tag="✓ Top third of batch"
+        tagTone="green"
+        ai="Top 10 mein aane ke liye tujhe sirf 2 aur orders chahiye is mahine. Top 10 RSOs ko DS Group ka Fast Track program milta hai — 6 mahine mein Senior RSO promotion possible hai."
+      >
         <div className="mt-2 h-1.5 rounded bg-slate-100">
           <div className="h-full rounded bg-green-500" style={{ width: "32%" }} />
         </div>
@@ -471,6 +503,7 @@ function KpiTile({
   sub,
   tag,
   tagTone,
+  ai,
   children,
 }: {
   title: string;
@@ -479,6 +512,7 @@ function KpiTile({
   sub: string;
   tag: string;
   tagTone: "amber" | "green" | "grey";
+  ai?: string;
   children?: ReactNode;
 }) {
   const tagClass =
@@ -496,6 +530,12 @@ function KpiTile({
       <div className="text-xs text-slate-600">{sub}</div>
       {children}
       <div className={`mt-2 inline-block rounded px-2 py-0.5 text-[10px] ${tagClass}`}>{tag}</div>
+      {ai && (
+        <div className="mt-2 rounded-md border border-dashed border-emerald-500/20 bg-emerald-50/50 p-2 text-[10px] leading-snug text-emerald-800">
+          <span className="font-semibold">AI · </span>
+          {ai}
+        </div>
+      )}
     </div>
   );
 }

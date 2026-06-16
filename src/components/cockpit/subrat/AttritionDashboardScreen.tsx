@@ -68,8 +68,16 @@ export function AttritionDashboardScreen() {
       title="Attrition Dashboard — DS Group"
       subtitle="18.4% rolling 12M · Sales force = 43% of exits · AI exit drivers mapped"
     >
-      <section className="grid grid-cols-1 gap-3 md:grid-cols-3">
-        <PremiumKpi label="Exits Last 12M" value="1,417" delta="18.4% rate" sub="Workforce 7,700" tone="critical" spark={[1180, 1220, 1265, 1310, 1352, 1390, 1417]} ai="Tracking 1.6× internal benchmark." />
+      <section className="grid grid-cols-1 gap-3 md:grid-cols-3 items-start">
+        <PremiumKpi
+          label="Exits Last 12M"
+          value="1,417"
+          delta="18.4% rate"
+          sub="Workforce 7,700"
+          tone="critical"
+          spark={[1180, 1220, 1265, 1310, 1352, 1390, 1417]}
+          ai="Sales force represents 43% of total exits despite being 16% of head count. North India RSO attrition (26.4%) is the primary driver. Meerut, Agra, Lucknow account for 62% of risk."
+        />
         <PremiumKpi label="Sales Exits" value="609" delta="43% of all exits" sub="Field Sales N&E concentrated" tone="critical" spark={[460, 490, 510, 540, 570, 590, 609]} />
         <PremiumKpi label="Avg Tenure at Exit" value="2.1y" delta="↓ from 2.8y FY25" sub="Top quartile leaving fastest" tone="warn" spark={[2.8, 2.7, 2.6, 2.45, 2.3, 2.2, 2.1]} />
       </section>
