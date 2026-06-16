@@ -154,7 +154,7 @@ function Landing() {
               <div className="mt-8 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
                 {[
                   ["7,700", "Workforce"],
-                  ["₹40,000 Cr+", "Estimated group turnover · Illustrative"],
+                  ["$5B", "Estimated group turnover · Illustrative"],
                   ["12", "Brands &amp; businesses"],
                   ["34%", "Skills expiry risk"],
                 ].map(([value, label]) => (
