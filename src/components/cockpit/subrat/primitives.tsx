@@ -78,7 +78,7 @@ export function PremiumKpi({
   return (
     <button
       onClick={onClick}
-      className={`group relative overflow-hidden rounded-xl border border-border bg-card p-4 text-left shadow-card ring-1 transition-all hover:-translate-y-0.5 hover:shadow-elevated h-full w-full flex flex-col ${toneRing[tone]}`}
+      className={`group relative overflow-hidden rounded-xl border border-border bg-card p-4 text-left shadow-card ring-1 transition-all hover:-translate-y-0.5 hover:shadow-elevated h-[220px] md:h-[200px] w-full flex flex-col ${toneRing[tone]}`}
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
       <div className="flex items-start justify-between gap-2 w-full">
@@ -108,7 +108,7 @@ export function PremiumKpi({
       </div>
       {sub && <div className="mt-1 text-[11px] text-muted-foreground">{sub}</div>}
       {ai && (
-        <div className="mt-2 rounded-md border border-dashed border-primary/30 bg-primary/5 px-2 py-1 text-[10px] leading-snug text-primary w-full">
+        <div className="mt-2 rounded-md border border-dashed border-primary/30 bg-primary/5 px-2 py-1 text-[10px] leading-snug text-primary w-full overflow-y-auto max-h-[60px]">
           <span className="font-semibold">AI · </span>
           {ai}
         </div>

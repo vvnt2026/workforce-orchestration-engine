@@ -50,7 +50,7 @@ function KpiCard({ kpi, onClick }: { kpi: Kpi; onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="rounded-xl border border-border bg-card p-4 text-left shadow-card transition-shadow hover:shadow-elevated focus:outline-none focus:ring-2 focus:ring-primary/40 h-full w-full flex flex-col"
+      className="rounded-xl border border-border bg-card p-4 text-left shadow-card transition-shadow hover:shadow-elevated focus:outline-none focus:ring-2 focus:ring-primary/40 h-[220px] md:h-[200px] w-full flex flex-col"
     >
       <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground w-full">
         {kpi.label}
@@ -63,7 +63,7 @@ function KpiCard({ kpi, onClick }: { kpi: Kpi; onClick: () => void }) {
       </div>
       {kpi.sub && <div className="mt-1 text-xs text-muted-foreground w-full">{kpi.sub}</div>}
       {inference && (
-        <div className="mt-2 rounded-md border border-dashed border-primary/30 bg-primary/5 px-2 py-1 text-[10px] leading-snug text-primary w-full">
+        <div className="mt-2 rounded-md border border-dashed border-primary/30 bg-primary/5 px-2 py-1 text-[10px] leading-snug text-primary w-full overflow-y-auto max-h-[60px]">
           <span className="font-semibold">AI · </span>
           {inference}
         </div>
