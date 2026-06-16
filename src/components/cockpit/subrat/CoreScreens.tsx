@@ -7,7 +7,7 @@ export function TalentAcquisitionScreen() {
       title="Talent Acquisition Intelligence"
       subtitle="87 open critical roles · AI-sourced shortlists · 41-day average time to fill"
     >
-      <section className="grid grid-cols-2 gap-3 md:grid-cols-4 items-start">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <PremiumKpi
           label="Open Roles"
           value="312"
@@ -103,7 +103,7 @@ export function PerformanceScreen() {
       title="Performance Intelligence"
       subtitle="Continuous performance signals across 7,700 employees · AI-calibrated · bias-checked"
     >
-      <section className="grid grid-cols-2 gap-3 md:grid-cols-4 items-start">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <PremiumKpi label="Goals on Track" value="74%" delta="↑ +3pp" sub="Mid-year cycle" tone="up" spark={[68, 69, 70, 72, 73, 74, 74]} />
         <PremiumKpi label="Calibration Coverage" value="91%" delta="Target 95%" sub="Managers calibrated" tone="up" spark={[78, 82, 85, 87, 89, 90, 91]} />
         <PremiumKpi label="Low Performers" value="6.2%" delta="3.4pp PIP active" sub="Manufacturing + Sales" tone="warn" />
@@ -203,7 +203,7 @@ export function LearningScreen() {
       title="Learning Intelligence"
       subtitle="Adaptive learning aligned to skills expiry · 744-worker reskilling wave in motion"
     >
-      <section className="grid grid-cols-2 gap-3 md:grid-cols-4 items-start">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <PremiumKpi label="L&D Adoption" value="64%" delta="↑ +9pp" sub="Active learners last 30d" tone="up" spark={[44, 48, 52, 55, 58, 61, 64]} />
         <PremiumKpi label="Reskilling Cohort" value="744" delta="Wave 1 · Q3" sub="Manufacturing automation" tone="warn" />
         <PremiumKpi label="Time to Competency" value="−28%" delta="AI-personalised" sub="vs classroom baseline" tone="up" />

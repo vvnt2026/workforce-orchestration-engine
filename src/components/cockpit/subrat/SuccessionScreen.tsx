@@ -41,7 +41,7 @@ export function SuccessionScreen() {
       title="Succession Intelligence — DS Group"
       subtitle="27 critical roles · 58% bench coverage · 6 succession gaps flagged"
     >
-      <section className="grid grid-cols-2 gap-3 md:grid-cols-4 items-start">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <PremiumKpi label="Critical Roles Tracked" value="27" sub="Top 3 layers of leadership" />
         <PremiumKpi label="Bench Coverage" value="58%" delta="Target 75%" sub="Ready + Emerging" tone="warn" />
         <PremiumKpi

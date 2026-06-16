@@ -50,25 +50,25 @@ function KpiCard({ kpi, onClick }: { kpi: Kpi; onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="rounded-xl border border-border bg-card p-4 text-left shadow-card transition-shadow hover:shadow-elevated focus:outline-none focus:ring-2 focus:ring-primary/40"
+      className="rounded-xl border border-border bg-card p-4 text-left shadow-card transition-shadow hover:shadow-elevated focus:outline-none focus:ring-2 focus:ring-primary/40 h-full w-full flex flex-col"
     >
-      <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+      <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground w-full">
         {kpi.label}
       </div>
-      <div className="mt-1.5 flex items-baseline gap-2">
+      <div className="mt-1.5 flex items-baseline gap-2 w-full">
         <span className="font-display text-2xl font-semibold text-foreground">{kpi.value}</span>
         {kpi.signal && (
           <span className={`text-xs ${toneStyles[kpi.tone ?? "default"]}`}>{kpi.signal}</span>
         )}
       </div>
-      {kpi.sub && <div className="mt-1 text-xs text-muted-foreground">{kpi.sub}</div>}
+      {kpi.sub && <div className="mt-1 text-xs text-muted-foreground w-full">{kpi.sub}</div>}
       {inference && (
-        <div className="mt-2 rounded-md border border-dashed border-primary/30 bg-primary/5 px-2 py-1 text-[10px] leading-snug text-primary">
-          <span className="font-semibold">AI Â· </span>
+        <div className="mt-2 rounded-md border border-dashed border-primary/30 bg-primary/5 px-2 py-1 text-[10px] leading-snug text-primary w-full">
+          <span className="font-semibold">AI · </span>
           {inference}
         </div>
       )}
-      <div className="mt-2 text-[10px] font-medium uppercase tracking-wider text-primary/80">
+      <div className="mt-auto pt-2 text-[10px] font-medium uppercase tracking-wider text-primary/80 w-full">
         View drill-down →
       </div>
     </button>
@@ -258,7 +258,7 @@ export function CockpitContent({ persona }: { persona: Persona }) {
       {/* KPI Grid */}
       <section>
         <SectionHeader title="Control Tower" sub="Click any KPI for drill-down" />
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 items-start">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {displayKpis.map((k) => (
             <KpiCard
               key={k.label}

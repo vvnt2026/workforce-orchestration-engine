@@ -78,14 +78,14 @@ export function PremiumKpi({
   return (
     <button
       onClick={onClick}
-      className={`group relative overflow-hidden rounded-xl border border-border bg-card p-4 text-left shadow-card ring-1 transition-all hover:-translate-y-0.5 hover:shadow-elevated ${toneRing[tone]}`}
+      className={`group relative overflow-hidden rounded-xl border border-border bg-card p-4 text-left shadow-card ring-1 transition-all hover:-translate-y-0.5 hover:shadow-elevated h-full w-full flex flex-col ${toneRing[tone]}`}
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-      <div className="flex items-start justify-between gap-2">
+      <div className="flex items-start justify-between gap-2 w-full">
         <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">{label}</div>
         {delta && <span className={`text-[11px] font-medium ${toneText[tone]}`}>{delta}</span>}
       </div>
-      <div className="mt-1.5 flex items-end gap-2">
+      <div className="mt-1.5 flex items-end gap-2 w-full">
         <span className={`font-display text-2xl font-semibold ${toneText[tone]}`}>{value}</span>
         {infoText && (
           <Popover>
@@ -108,13 +108,13 @@ export function PremiumKpi({
       </div>
       {sub && <div className="mt-1 text-[11px] text-muted-foreground">{sub}</div>}
       {ai && (
-        <div className="mt-2 rounded-md border border-dashed border-primary/30 bg-primary/5 px-2 py-1 text-[10px] leading-snug text-primary">
+        <div className="mt-2 rounded-md border border-dashed border-primary/30 bg-primary/5 px-2 py-1 text-[10px] leading-snug text-primary w-full">
           <span className="font-semibold">AI · </span>
           {ai}
         </div>
       )}
       {signalBasis && (
-        <div className="mt-1 text-[10px] text-muted-foreground">
+        <div className="mt-auto pt-2 text-[10px] text-muted-foreground w-full">
           <span className="font-medium text-foreground/70">Signal basis:</span> {signalBasis}
         </div>
       )}

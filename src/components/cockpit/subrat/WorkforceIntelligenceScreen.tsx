@@ -19,7 +19,7 @@ export function WorkforceIntelligenceScreen() {
       subtitle="Enterprise workforce visibility across FMCG, Manufacturing, Hospitality, and Sales operations."
     >
       {/* KPI row */}
-      <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 items-start">
+      <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         <PremiumKpi
           label="Total Workforce"
           value="18,742"

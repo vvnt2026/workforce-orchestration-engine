@@ -68,7 +68,7 @@ export function AttritionDashboardScreen() {
       title="Attrition Dashboard — DS Group"
       subtitle="18.4% rolling 12M · Sales force = 43% of exits · AI exit drivers mapped"
     >
-      <section className="grid grid-cols-1 gap-3 md:grid-cols-3 items-start">
+      <section className="grid grid-cols-1 gap-3 md:grid-cols-3">
         <PremiumKpi
           label="Exits Last 12M"
           value="1,417"

@@ -110,7 +110,7 @@ export function DeiComplianceScreen() {
       subtitle="Group-level diversity scorecards, POSH caseloads, and statutory factory compliance tracking."
     >
       {/* KPI Row */}
-      <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 items-start">
+      <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         <PremiumKpi
           label="Women Workforce Ratio"
           value="21%"
