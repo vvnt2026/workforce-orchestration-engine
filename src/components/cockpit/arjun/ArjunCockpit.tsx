@@ -363,7 +363,7 @@ function TargetScreen({
   return (
     <div className="space-y-5">
       <Card>
-        <h2 className="font-display text-lg font-semibold text-slate-900">Tera Din — Tuesday, 16 June 2026</h2>
+        <h2 className="font-display text-lg font-semibold text-slate-900">Tera Din — {currentDateLabel}</h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-700">
           Tere batch mein jo RSOs Day 20 tak 8+ orders kar lete hain, unke probation clear karne ke chances 78% zyada
           hote hain. Abhi tere paas 7 orders hain — aaj 1 aur chahiye. Sharma Kirana Cantonment aur Gupta Provision

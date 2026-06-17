@@ -143,7 +143,7 @@ export function CockpitContent({ persona }: { persona: Persona }) {
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-widest text-white/60">
               <span className="h-1.5 w-1.5 rounded-full bg-primary-glow pulse-dot" />
-              Live Cockpit · {new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" })}
+              Live Cockpit · {new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}
             </div>
             <h1 className="mt-1 font-display text-2xl font-semibold lg:text-3xl">{persona.name}</h1>
             <div className="mt-1 text-sm text-white/75">{persona.role}</div>
