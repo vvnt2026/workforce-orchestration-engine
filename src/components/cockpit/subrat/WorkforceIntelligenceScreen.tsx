@@ -22,33 +22,36 @@ export function WorkforceIntelligenceScreen() {
       <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         <PremiumKpi
           label="Total Workforce"
-          value="18,742"
-          delta="↑ +4.1% YoY"
+          value="10,486"
+          delta="↑ +3.3% YoY"
           sub="Active across 12 BUs"
           tone="up"
-          spark={[17800, 17910, 18020, 18180, 18340, 18520, 18742]}
+          spark={[9800, 9920, 10050, 10180, 10290, 10380, 10486]}
           ai="Net growth driven by Hospitality and Digital hiring waves."
           onClick={() =>
             d.open({
-              title: "Total Workforce — 18,742",
-              summary: ["+4.1% YoY · Hospitality +9.2% leads growth; Manufacturing −1.1% on automation."],
+              title: "Total Workforce — 10,486",
+              summary: [
+                "+3.3% YoY · Brand & Marketing (+7.2%) and Hospitality & Retail (+5.7%) lead growth; Manufacturing slowest at +2.1%.",
+              ],
               table: {
                 columns: ["BU", "Headcount", "YoY"],
                 rows: [
-                  ["Field Sales", 5820, "+2.4%"],
-                  ["Manufacturing", 7114, "−1.1%"],
-                  ["Hospitality", 2006, "+9.2%"],
-                  ["Brand & Marketing", 612, "+7.1%"],
-                  ["Corporate / HQ", 1882, "+1.8%"],
-                  ["Supply Chain & R&D", 1308, "+3.7%"],
+                  ["Field Sales", "1,684", "+4.4%"],
+                  ["Manufacturing", "6,212", "+2.1%"],
+                  ["Hospitality & Retail", "1,108", "+5.7%"],
+                  ["Brand & Marketing", "312", "+7.2%"],
+                  ["Corporate / HQ & Digital", "732", "+5.5%"],
+                  ["Supply Chain & R&D", "438", "+3.7%"],
+                  ["Total", "10,486", "+3.3%"],
                 ],
               },
             })
           }
         />
-        <PremiumKpi label="Field Sales Workforce" value="5,820" delta="High attrition risk" sub="1,240 in North zone" tone="critical" spark={[5910, 5880, 5860, 5840, 5830, 5825, 5820]} ai="Top 20% performers exiting 2.4× the average." />
-        <PremiumKpi label="Manufacturing Workforce" value="7,114" delta="Stable utilization" sub="3 plants · 84.2% util" tone="up" spark={[7180, 7170, 7160, 7140, 7130, 7120, 7114]} />
-        <PremiumKpi label="Hospitality Workforce" value="2,006" delta="Seasonal demand rising" sub="7 properties · Peak Apr–Jun" tone="warn" spark={[1880, 1910, 1940, 1965, 1980, 1995, 2006]} ai="Weekend coverage trending 91% — chef gap in South." />
+        <PremiumKpi label="Field Sales Workforce" value="1,684" delta="High attrition risk" sub="1,240 in North zone" tone="critical" spark={[1740, 1725, 1710, 1700, 1695, 1690, 1684]} ai="Top 20% performers exiting 2.4× the average." />
+        <PremiumKpi label="Manufacturing Workforce" value="6,212" delta="Stable utilization" sub="3 plants · 84.2% util" tone="up" spark={[6280, 6270, 6250, 6240, 6230, 6220, 6212]} />
+        <PremiumKpi label="Hospitality Workforce" value="1,108" delta="Seasonal demand rising" sub="7 properties · Peak Apr–Jun" tone="warn" spark={[1020, 1040, 1060, 1075, 1090, 1100, 1108]} ai="Weekend coverage trending 91% — chef gap in South." />
         <PremiumKpi label="Women Workforce Ratio" value="21%" delta="↑ +2.4% improvement" sub="Target 28% by 2027" tone="up" spark={[18.2, 18.9, 19.4, 19.8, 20.2, 20.7, 21]} />
         <PremiumKpi label="Workforce Cost YoY" value="↑ 11.8%" delta="Pressure detected" sub="Comp + OT + Contractor" tone="warn" spark={[8.1, 8.9, 9.4, 10.1, 10.8, 11.4, 11.8]} ai="Manufacturing OT +17% — investigate." />
         <PremiumKpi label="AI Risk Alerts" value="38" delta="Priority review" sub="12 critical · 26 warn" tone="critical" spark={[22, 26, 28, 30, 32, 35, 38]} />
@@ -98,10 +101,10 @@ export function WorkforceIntelligenceScreen() {
         <Panel title="Workforce Distribution Heatmap" sub="Click any region to drill into demographics, exits and pressure" right={<span className="text-[10px] uppercase tracking-wider text-muted-foreground">Live</span>}>
           <div className="grid grid-cols-2 gap-2">
             {[
-              { r: "North", size: "2,180", attr: "31%", prod: "82", eng: "66", tone: "critical" as const },
-              { r: "East", size: "1,640", attr: "27%", prod: "85", eng: "69", tone: "critical" as const },
-              { r: "West", size: "2,060", attr: "19%", prod: "91", eng: "74", tone: "warn" as const },
-              { r: "South", size: "1,820", attr: "16%", prod: "88", eng: "78", tone: "up" as const },
+              { r: "North", size: "4,312", attr: "33%", prod: "82", eng: "66", tone: "critical" as const },
+              { r: "East", size: "2,086", attr: "29%", prod: "85", eng: "69", tone: "critical" as const },
+              { r: "West", size: "2,214", attr: "22%", prod: "91", eng: "74", tone: "warn" as const },
+              { r: "South", size: "1,874", attr: "19%", prod: "88", eng: "78", tone: "up" as const },
             ].map((x) => (
               <button
                 key={x.r}

@@ -20,18 +20,22 @@ export type DrillData = {
 const KPI_OVERRIDES: Record<string, Partial<DrillData>> = {
   // ---- Subrat ----
   "subrat:Total Workforce": {
-    summary: ["7,700 total · +340 net YTD across 12 locations. Manufacturing is the largest population (1,240) and the slowest growing; Field Sales is the highest churn population."],
+    title: "Total Workforce — 10,486",
+    summary: [
+      "10,486 total · +333 net over 12 months across 21+ units. Manufacturing is the largest population (6,212) and the slowest growing; Field Sales is the highest-churn population.",
+    ],
     table: {
       columns: ["Business unit", "Headcount", "YoY", "Attrition", "Open roles"],
       rows: [
-        ["Manufacturing (Noida + 2)", 1240, "+2.1%", "12.4%", 11],
-        ["Field Sales (Pan-India)", 1840, "+4.4%", "31.0%", 24],
-        ["Brand & Marketing", 312, "+7.2%", "14.8%", 9],
-        ["Hospitality (4 sites)", 847, "+3.8%", "34.2%", 12],
-        ["Premium Retail (L'Opera/Le Marche)", 410, "+9.1%", "27.3%", 7],
-        ["Corporate / HQ", 982, "+1.4%", "9.6%", 8],
-        ["Supply Chain & R&D", 1228, "+3.7%", "11.2%", 12],
-        ["Digital / IT", 841, "+11.8%", "16.9%", 4],
+        ["Manufacturing (21+ units)", "6,212", "2.10%", "12.4%", 11],
+        ["Field Sales (Pan-India)", "1,684", "4.40%", "31.0%", 24],
+        ["Brand & Marketing", "312", "7.20%", "14.8%", 9],
+        ["Hospitality (5 hotels)", "698", "3.80%", "34.2%", 12],
+        ["Premium Retail (L'Opera / Le Marche)", "410", "9.10%", "27.3%", 7],
+        ["Corporate / HQ", "486", "2.60%", "9.6%", 8],
+        ["Supply Chain & R&D", "438", "3.70%", "11.2%", 12],
+        ["Digital / IT", "246", "11.80%", "16.9%", 4],
+        ["Total", "10,486", "3.30%", "18.4%", 87],
       ],
     },
   },
@@ -925,7 +929,7 @@ export function getKpiDrill(personaId: string, kpi: Kpi): DrillData {
       ...(kpi.signal ? [{ label: "Signal", value: kpi.signal, tone: kpi.tone }] : []),
     ],
   };
-  return { ...base, ...o, title: kpi.label, subtitle: kpi.sub };
+  return { ...base, ...o, title: o?.title ?? kpi.label, subtitle: o?.subtitle ?? kpi.sub };
 }
 
 export function getActionDrill(personaId: string, action: string): DrillData {

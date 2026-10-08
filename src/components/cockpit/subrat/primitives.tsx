@@ -463,33 +463,115 @@ export function RadarChart({ axes }: { axes: { label: string; value: number }[] 
 // Drilldown builders
 // ============================================================
 
-export const regionDrill = (region: string): DrillData => ({
-  title: `${region} Region — Workforce Deep Dive`,
-  subtitle: "Live snapshot · refreshed 02:14",
-  summary: [
-    `${region} carries the highest combined risk on attrition, territory pressure, and compensation gap. AI flags 3 high-impact interventions.`,
-  ],
-  metrics: [
-    { label: "Workforce", value: region === "North" ? "2,180" : region === "East" ? "1,640" : region === "South" ? "1,820" : "2,060" },
-    { label: "Attrition", value: region === "North" ? "31%" : region === "East" ? "27%" : "19%", tone: "critical" },
-    { label: "Productivity", value: region === "North" ? "82" : "88", tone: "warn" },
-    { label: "Engagement", value: region === "South" ? "78" : "66", tone: "down" },
-  ],
-  table: {
-    columns: ["Cluster", "Headcount", "Attrition", "Top exit driver"],
-    rows: [
-      ["Field Sales RSO", 740, "33%", "Compensation gap −12%"],
-      ["ASM / TSM", 84, "18%", "Career ceiling"],
-      ["Trade Marketing", 38, "14%", "Workload"],
-      ["Distribution Ops", 220, "21%", "Manager quality"],
+const REGION_DATA: Record<string, DrillData> = {
+  North: {
+    title: "North Region — Workforce Deep Dive",
+    subtitle: "4,312 workforce · 33% sales attrition · Productivity 82 · Engagement 66",
+    summary: [
+      "North carries the highest combined risk: attrition, territory pressure and a 12% pay gap. AI flags 3 high-impact interventions.",
+    ],
+    metrics: [
+      { label: "Workforce", value: "4,312" },
+      { label: "Attrition", value: "33%", tone: "critical" },
+      { label: "Productivity", value: "82", tone: "warn" },
+      { label: "Engagement", value: "66", tone: "down" },
+    ],
+    table: {
+      columns: ["Cluster", "Headcount", "Attrition", "Top exit driver"],
+      rows: [
+        ["Field Sales RSO", 900, "33%", "Compensation gap −12%"],
+        ["Merchandisers", 190, "24%", "Seasonal contract churn"],
+        ["ASM / TSM", 112, "18%", "Career ceiling"],
+        ["Trade Marketing", 38, "14%", "Workload"],
+      ],
+    },
+    recommendations: [
+      "Territory rebalance — move 12 routes from overloaded to under-utilised RSOs",
+      "Top-quartile comp correction +9% for retention-critical 84 RSOs",
+      "Manager coaching for 6 lowest-scoring ASMs in the region",
     ],
   },
-  recommendations: [
-    "Territory rebalance — move 12 routes from overloaded to under-utilised RSOs",
-    "Top-quartile comp correction +9% for retention-critical 84 RSOs",
-    "Manager coaching for 6 lowest-scoring ASMs in the region",
-  ],
-});
+  East: {
+    title: "East Region — Workforce Deep Dive",
+    subtitle: "2,086 · 29% · Productivity 85 · Engagement 69",
+    summary: [
+      "East's risk is payout-driven: delayed incentives push RSO exits. AI flags 2 interventions.",
+    ],
+    metrics: [
+      { label: "Workforce", value: "2,086" },
+      { label: "Attrition", value: "29%", tone: "critical" },
+      { label: "Productivity", value: "85", tone: "warn" },
+      { label: "Engagement", value: "69", tone: "down" },
+    ],
+    table: {
+      columns: ["Cluster", "Headcount", "Attrition", "Top exit driver"],
+      rows: [
+        ["Field Sales RSO", 124, "29%", "Delayed incentive payout"],
+        ["Merchandisers", 22, "21%", "Wage disparity"],
+        ["ASM / TSM", 16, "15%", "Career progression"],
+        ["Trade Marketing", 6, "12%", "Workload"],
+      ],
+    },
+    recommendations: [
+      "Incentive payout cycle acceleration — shift quarterly bonus to monthly disbursement",
+      "Targeted RSO retention package for high-performing tier",
+    ],
+  },
+  West: {
+    title: "West Region — Workforce Deep Dive",
+    subtitle: "2,214 · 22% · Productivity 91 · Engagement 74",
+    summary: [
+      "West is the strongest performer; watch the RSO pay gap. AI flags 1 intervention.",
+    ],
+    metrics: [
+      { label: "Workforce", value: "2,214" },
+      { label: "Attrition", value: "22%", tone: "warn" },
+      { label: "Productivity", value: "91", tone: "up" },
+      { label: "Engagement", value: "74", tone: "warn" },
+    ],
+    table: {
+      columns: ["Cluster", "Headcount", "Attrition", "Top exit driver"],
+      rows: [
+        ["Field Sales RSO", 114, "22%", "RSO pay gap"],
+        ["Merchandisers", 22, "17%", "Contract expiration"],
+        ["ASM / TSM", 14, "12%", "Role clarity"],
+        ["Trade Marketing", 6, "10%", "Market coverage"],
+      ],
+    },
+    recommendations: [
+      "RSO pay gap benchmark correction to align with FMCG market standard",
+    ],
+  },
+  South: {
+    title: "South Region — Workforce Deep Dive",
+    subtitle: "1,874 · 19% · Productivity 88 · Engagement 78",
+    summary: [
+      "South is the most stable region; territory and language fit drive the few exits. AI flags 1 intervention.",
+    ],
+    metrics: [
+      { label: "Workforce", value: "1,874" },
+      { label: "Attrition", value: "19%", tone: "up" },
+      { label: "Productivity", value: "88", tone: "up" },
+      { label: "Engagement", value: "78", tone: "up" },
+    ],
+    table: {
+      columns: ["Cluster", "Headcount", "Attrition", "Top exit driver"],
+      rows: [
+        ["Field Sales RSO", 88, "19%", "Territory & language fit"],
+        ["Merchandisers", 16, "14%", "Distance to route"],
+        ["ASM / TSM", 12, "10%", "Relocation"],
+        ["Trade Marketing", 4, "8%", "Bandwidth"],
+      ],
+    },
+    recommendations: [
+      "Territory alignment and localized language-fit onboarding program",
+    ],
+  },
+};
+
+export const regionDrill = (region: string): DrillData => {
+  return REGION_DATA[region] || REGION_DATA.North;
+};
 
 export const riskDrill = (risk: string): DrillData => {
   const map: Record<string, DrillData> = {

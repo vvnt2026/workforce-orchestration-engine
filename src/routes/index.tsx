@@ -137,7 +137,7 @@ function Landing() {
             <div className="max-w-4xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-widest text-white/70">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary-glow pulse-dot" />
-                Built for DS Group - 7,700 workforce - 21+ manufacturing units across India
+                Built for DS Group - 10,000+ workforce - 21+ manufacturing units across India
               </div>
               <h1 className="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] text-balance lg:text-6xl">
                 AI Colleagues for DS Group's
@@ -153,7 +153,7 @@ function Landing() {
 
               <div className="mt-8 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
                 {[
-                  ["7,700", "Workforce"],
+                  ["10,000+", "Workforce"],
                   ["$5B", "Estimated group turnover · Illustrative"],
                   ["12", "Brands &amp; businesses"],
                   ["34%", "Skills expiry risk"],
@@ -375,16 +375,14 @@ function Landing() {
               Not a generic HR dashboard. A cockpit per workforce population.
             </h2>
             <p className="mt-6 leading-relaxed text-foreground/75">
-              DS Group's 7,700 people sit across five very different worlds - manufacturing plants
+              DS Group's 10,000+ people sit across very different worlds - manufacturing plants
               making Rajnigandha and Pulse; 1,200+ field sales RSOs selling Catch and Pass Pass;
-              brand teams competing with HUL and ITC; premium hospitality at L'Opera and Manu
-              Maharani; and a CHRO with a transformation mandate on day 127. One generic dashboard
-              cannot serve all five. Five AI Colleague cockpits can.
+              brand teams competing with HUL and ITC; and premium hospitality at L'Opera and Manu
+              Maharani. One generic dashboard cannot serve all. Five AI Colleague cockpits can.
             </p>
             <ul className="mt-6 space-y-3">
               {[
                 "Skills expiry tracked against 18-month automation horizon",
-                "Field sales attrition modelled against ITC / HUL / Dabur poaching",
                 "Brand career paths benchmarked to MNC FMCG promotion velocity",
                 "Hospitality coverage linked to guest satisfaction and revenue risk",
                 "Transformation Index rolling up People + Process across 11 initiatives",

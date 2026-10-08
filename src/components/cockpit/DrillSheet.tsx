@@ -99,21 +99,28 @@ export function DrillSheet({
                     </tr>
                   </thead>
                   <tbody>
-                    {data.table.rows.map((row, i) => (
-                      <tr
-                        key={i}
-                        className="border-t border-border odd:bg-background even:bg-muted/20"
-                      >
-                        {row.map((cell, j) => (
-                          <td
-                            key={j}
-                            className="px-3 py-2 text-foreground/85"
-                          >
-                            {cell}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
+                    {data.table.rows.map((row, i) => {
+                      const isTotal = row[0] === "Total";
+                      return (
+                        <tr
+                          key={i}
+                          className={
+                            isTotal
+                              ? "border-t-2 border-border font-semibold bg-muted/40 text-foreground"
+                              : "border-t border-border odd:bg-background even:bg-muted/20"
+                          }
+                        >
+                          {row.map((cell, j) => (
+                            <td
+                              key={j}
+                              className={`px-3 py-2 ${isTotal ? "font-semibold text-foreground" : "text-foreground/85"}`}
+                            >
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>

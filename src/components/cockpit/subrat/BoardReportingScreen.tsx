@@ -57,7 +57,7 @@ export function BoardReportingScreen() {
       >
         <div className="space-y-4 text-sm leading-relaxed text-foreground/85">
           <p>
-            DS Group's workforce is growing at +4.1% YoY to 18,742, with Hospitality leading growth and Manufacturing
+            DS Group's workforce is growing at +4.1% YoY to 10,486, with Hospitality leading growth and Manufacturing
             contracting on automation. The defining risk this quarter is the convergence of <strong>field sales attrition</strong>{" "}
             (18.4%, sales force = 43% of exits) and <strong>skills expiry</strong> (34% of critical skills with an 18-month
             window). Combined revenue exposure is estimated at ₹84 Cr over 12 months.

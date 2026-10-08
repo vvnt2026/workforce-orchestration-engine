@@ -71,7 +71,7 @@ export const personas: Record<string, Persona> = {
     greeting:
       "Good morning, Subrat. 3 critical workforce signals and 2 strategic priorities need your attention. Skills obsolescence is accelerating in Manufacturing — 34% of critical skills will expire within 18 months without intervention. AI has mapped your transformation roadmap status overnight.",
     kpis: [
-      { label: "Total Workforce", value: "7,700", signal: "+340 YTD", sub: "Noida HQ + 12 locations", tone: "up" },
+      { label: "Total Workforce", value: "10,486", signal: "+333 net", sub: "Noida HQ + 21+ units", tone: "up" },
       { label: "Skills Expiry Risk", value: "34%", signal: "↑ +8pp", sub: "Critical skills · 18-month window", tone: "critical" },
       {
         label: "Attrition (12M)",
